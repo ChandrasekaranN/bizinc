@@ -1,0 +1,355 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+/* AddPost form container styling */
+.add-post-form {
+  background-color: var(--background);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: 20px auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Input and textarea styling */
+.add-post-form input[type="text"],
+.add-post-form textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1em;
+  color: var(--foreground);
+  background-color: var(--background);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s;
+}
+
+.add-post-form input[type="text"]:focus,
+.add-post-form textarea:focus {
+  background-color: var(--foreground);
+  color: var(--background);
+  outline: none;
+}
+
+/* Button styling */
+.add-post-form button {
+  background-color: var(--foreground);
+  color: var(--background);
+  font-size: 1em;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  align-self: flex-start;
+}
+
+.add-post-form button:hover {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+/* Post container styling */
+.post-card {
+  background-color: var(--background);
+  color: var(--foreground);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+/* Post title */
+.post-card h2 {
+  font-size: 1.5em;
+  color: var(--foreground);
+  margin-bottom: 10px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+/* Post body */
+.post-card p {
+  font-size: 1em;
+  color: var(--foreground);
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+ul {
+  list-style-type: none; 
+  padding: 0;            
+  margin: 0;             
+}
+
+/* Like button styling */
+.post-card .like-button {
+  background-color: var(--foreground);
+  color: var(--background);
+  font-size: 1em;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  align-self: flex-start;
+}
+
+.post-card .like-button:hover {
+  background-color: #0056b3;
+}
+
+/* Comments section styling */
+.comments-section {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.comments-section h3 {
+  font-size: 1.25em;
+  color: var(--foreground);
+  margin-bottom: 10px;
+}
+
+/* Comment item styling */
+.comment-item {
+  padding: 10px;
+  border-radius: 4px;
+  background-color: var(--background);
+  color: var(--foreground);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+/* Add Comment form styling */
+.add-comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+  background-color: var(--background);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 0.95em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: var(--foreground);
+  background-color: var(--background);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+.add-comment-form textarea:focus {
+  border-color: var(--background);
+  outline: none;
+}
+
+.add-comment-form button {
+  background-color: var(--foreground);
+  color: var(--background);
+  font-size: 1em;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  align-self: flex-start;
+}
+
+.add-comment-form button:hover {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .add-post-form,
+  .post-card,
+  .comment-item {
+    background-color: #171717;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .add-post-form input[type="text"],
+  .add-post-form textarea,
+  .add-comment-form textarea {
+    background-color: #121212;
+    border: 1px solid #444;
+    color: var(--foreground);
+  }
+
+  .add-post-form button,
+  .like-button,
+  .add-comment-form button {
+    background-color: var(--foreground);
+  color: var(--background);
+  }
+
+  .add-post-form button:hover,
+  .like-button:hover,
+  .add-comment-form button:hover {
+    background-color: var(--foreground);
+    color: var(--background);
+  }
+}
+
+.comment-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comment-item p {
+  margin: 0;
+  font-size: 0.95em;
+}
+
+h1{
+  text-align: center;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+form input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid ;
+  border-radius: 4px;
+  width: 300px;
+  margin-right: 10px;
+  transition: border-color 0.2s;
+}
+
+form input:focus {
+  border-color: var(--button-bg);
+}
+
+form button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  background-color: var(--foreground);
+  color: var(--background);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: var(--foreground);
+}
+
+/* Todo List */
+ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background);
+  color: var(--foreground);
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+li button {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  background-color: var(--foreground);
+  color: var(--background);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+li button:hover {
+  background-color: var(--background);
+}
+
+li.completed {
+  text-decoration: line-through;
+  background-color: var(--background);
+}
+
+@media (prefers-color-scheme: dark) {
+  li {
+    background-color: #171717;
+    border-color: #444;
+  }
+
+  li.completed {
+    background-color: #333;
+  }
+}
