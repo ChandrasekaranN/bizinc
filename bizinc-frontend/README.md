@@ -46,19 +46,25 @@ To access the app, users need to log in with valid credentials. The login.js pag
 ## Todo Management:
 
 TodoPage: Displays all todos and allows the user to create and complete them.
+
 TodoList: Displays a list of todos.
+
 AddTodo: Component for adding a new todo.
 
 ## Post Management:
 
 PostsPage: Displays posts and allows users to like or create them.
+
 PostList: Displays all posts.
+
 Post: Displays a single post with the option to like it.
 
 ## Comment Management:
 
 CommentsPage: Displays comments on posts.
+
 CommentList: Lists all comments on a post.
+
 AddComment: Allows the user to add a comment to a post.
 
 ## Protected Routes
@@ -66,4 +72,5 @@ Some pages require the user to be logged in. These pages are protected using an 
 
 ## Error Handling
 404: If a page does not exist, the app will display a 404 error page.
+
 500: Server errors will display an error message prompting the user to try again.
