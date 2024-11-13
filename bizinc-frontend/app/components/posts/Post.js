@@ -39,7 +39,6 @@ const Post = ({ post, onLikePost }) => {
     }
   };
 
-  // In Post.js
   return (
     <li className="post-card">
       <h2 >{post.title}</h2>

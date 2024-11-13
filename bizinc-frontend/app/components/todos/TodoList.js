@@ -1,4 +1,3 @@
-// components/todoList.js
 import Todo from './Todo';
 
 const TodoList = ({ todos, onCompletetodo }) => {

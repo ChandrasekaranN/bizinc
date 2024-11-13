@@ -11,7 +11,7 @@ export default checkAuth(function PostsPage() {
   const [post, setPost] = useState({ title: '', body: '' });
 
   useEffect(() => {
-    const fetchPosts = async () => {
+    const fetchPosts = async () => { // fetching posts from the backend api
       try {
         const response = await axios.get('/api/posts/get');
         setPosts(response.data);
@@ -22,7 +22,7 @@ export default checkAuth(function PostsPage() {
     fetchPosts();
   }, []);
 
-  const handleSubmit = async (e, post, setPost) => {
+  const handleSubmit = async (e, post, setPost) => { // function handled to post the posts into the backend
     e.preventDefault();
     if (post.title.trim() && post.body.trim()) {
       try {
@@ -35,7 +35,7 @@ export default checkAuth(function PostsPage() {
     }
   };
 
-  const handleLikePost = async (postId, currentLikeStatus) => {
+  const handleLikePost = async (postId, currentLikeStatus) => { // function handled to post the like of a post into the backend
     try {
       await axios.put(`/api/posts/${postId}/like`);
       setPosts(posts.map((post) => post.id === postId ? { ...post, liked: !currentLikeStatus } : post));
@@ -44,7 +44,6 @@ export default checkAuth(function PostsPage() {
     }
   };
 
-  // In PostsPage.js
   return (
     <div className="container">
       <h1>Posts</h1>

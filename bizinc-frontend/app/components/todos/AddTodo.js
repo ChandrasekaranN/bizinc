@@ -1,4 +1,3 @@
-// components/AddTodo.js
 const AddTodo = ({ todo, setTodo, handleSubmit }) => {
   return (
     <form onSubmit={(e) => handleSubmit(e, todo, setTodo)}>

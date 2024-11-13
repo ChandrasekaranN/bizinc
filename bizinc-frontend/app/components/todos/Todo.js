@@ -1,4 +1,3 @@
-// components/todo.js
 const Todo = ({ todo, onCompletetodo }) => {
   return (
     <li style={{ textDecoration: todo.completed ? 'line-through' : 'none',}}>
