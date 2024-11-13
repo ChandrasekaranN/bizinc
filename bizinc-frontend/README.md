@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Frontend App
 
-## Getting Started
+This is a frontend for the app built with **Next.js**. The app allows users to create, read, and update their todo tasks, along with the ability to add posts, like them, and comment on them.
 
-First, run the development server:
+## Features
+
+- **Authentication**: User can log in with credentials to access the todo and posts features.
+- **Todo Management**: Add, list, and mark todo items as completed.
+- **Posts**: Users can create posts, like posts, and see all posts.
+- **Comments**: Users can add comments to posts.
+- **User Session**: Protected routes to ensure only authenticated users can access certain pages.
+
+## Technologies
+
+- **Next.js**: A React framework for building the user interface.
+- **Axios**: A promise-based HTTP client for making API requests.
+- **API**: Interfacing with backend REST API for todo management, posts, and comments.
+
+## Setup
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/ChandrasekaranN/bizinc.git
+
+cd bizinc-frontend
+
+npm install
 ```
+### 2. Configure the backend API in next.config.mjs
+Set the localhost backend API in the rewrite function to map the API call to the backend API
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Authentication
+To access the app, users need to log in with valid credentials. The login.js page handles user authentication. Once logged in, the session is saved, and the user is redirected to the main dashboard with their todo list.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Pages
+/login/page.js: Login page - routes to (/login)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+/todo/page.js: Dashboard showing todo items - routes to (/todo)
 
-## Learn More
+/post/page.js: Page to view and create posts - routes to (/post)
 
-To learn more about Next.js, take a look at the following resources:
+/post/comment: Comments to posts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Components
+## Todo Management:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+TodoPage: Displays all todos and allows the user to create and complete them.
+TodoList: Displays a list of todos.
+AddTodo: Component for adding a new todo.
 
-## Deploy on Vercel
+## Post Management:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+PostsPage: Displays posts and allows users to like or create them.
+PostList: Displays all posts.
+Post: Displays a single post with the option to like it.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Comment Management:
+
+CommentsPage: Displays comments on posts.
+CommentList: Lists all comments on a post.
+AddComment: Allows the user to add a comment to a post.
+
+## Protected Routes
+Some pages require the user to be logged in. These pages are protected using an authentication middleware that checks if the user has an active session. If the user is not authenticated, they will be redirected to the login page.
+
+## Error Handling
+404: If a page does not exist, the app will display a 404 error page.
+500: Server errors will display an error message prompting the user to try again.
